@@ -540,6 +540,7 @@ footer li{
 
 @media all and (max-width: 880px) {
     #bloc_page {
+        max-width: 880px;
         width: auto;
         margin: auto;
     }
@@ -584,6 +585,7 @@ footer li{
 
 @media all and (max-width: 560px) {
     #bloc_page {
+        max-width: 560px;
         width: auto;
         margin: auto;
     }
