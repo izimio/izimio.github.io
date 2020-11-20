@@ -524,7 +524,11 @@ footer{
 footer li{
     margin-bottom: 7%;
     color: rgb(60, 60, 60);
-    
+}
+
+footer ul{
+    border: 2px solid blue;
+    width: 130%;
 }
 
 /*++++++++++++++++++++++++++*/
@@ -573,6 +577,7 @@ footer li{
     .frioul{
         margin-top: 0;
     }
+
     .parc{
         margin-top: 29%;
     }
