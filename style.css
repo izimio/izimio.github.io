@@ -6,7 +6,7 @@
         url('font/Raleway-VariableFont_wght.ttf') format('ttf'),
 }
 
-body {
+html ,body {
     font-family: 'raleway', Arial, serif;
     overflow-x: hidden;
 }
@@ -540,7 +540,6 @@ footer li{
 
 @media all and (max-width: 880px) {
     #bloc_page {
-        max-width: 880px;
         width: auto;
         margin: auto;
     }
@@ -584,10 +583,11 @@ footer li{
 }
 
 @media all and (max-width: 560px) {
+
     #bloc_page {
-        max-width: 560px;
         width: auto;
         margin: auto;
+        overflow: hidden;
     }
 
 /* HEADER */
@@ -700,14 +700,9 @@ footer li{
     }
 
     .car1{
-        position: relative;
         width: 100%;
         height: auto;
         flex-direction: column;
-    }
-    
-    .carte_car1{
-        justify-content: left;
     }
 
     .car1_img{
