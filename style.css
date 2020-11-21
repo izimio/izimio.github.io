@@ -79,12 +79,12 @@ nav li:nth-child(2) {
 
 nav li{
     height: 100%;
-    padding-top: 5.4%;
-    margin-top: -5.4%;
+    padding-top: 4%;
+    margin-top: -4.5%;
 }
 
 nav li:hover{
-    border-top: 2px solid #0065FC;
+    border-top: 5px solid #0065FC;
     transition: 90ms;
 }
 
