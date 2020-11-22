@@ -6,13 +6,14 @@
         url('font/Raleway-VariableFont_wght.ttf') format('ttf'),
 }
 
-html ,body {
+html,
+body {
     font-family: 'raleway', Arial, serif;
     overflow-x: hidden;
 }
 
 #bloc_page {
-   max-width: 1240px;
+    max-width: 1440px;
     margin: auto;
 }
 
@@ -27,11 +28,12 @@ a {
     color: black;
 }
 
-.blue, .bluet {
+.blue,
+.bluet {
     color: #0065FC;
 }
 
-.white{
+.white {
     color: white;
 }
 
@@ -52,7 +54,7 @@ h1 {
 
 /* HEADER */
 
-.minw{
+.minw {
     display: none;
 }
 
@@ -77,19 +79,18 @@ nav li:nth-child(2) {
 
 }
 
-nav li{
-    height: 100%;
+nav li {
     padding-top: 4%;
     margin-top: -4.5%;
 }
 
-nav li:hover{
+nav li:hover {
     border-top: 5px solid #0065FC;
     transition: 90ms;
 }
 
 
-.bluett{
+.bluett {
     display: none;
 }
 
@@ -101,7 +102,7 @@ nav li:hover{
     margin-bottom: 25px;
 }
 
-.txtheader p{
+.txtheader p {
     color: rgb(60, 60, 60);
 }
 
@@ -117,7 +118,8 @@ table td:nth-child(1) {
     background-color: #F2F2F2;
 }
 
-table td:nth-child(2), .tab2 td:nth-child(2) {
+table td:nth-child(2),
+.tab2 td:nth-child(2) {
     border-top: 1px solid #F2F2F2;
     border-bottom: 1px solid #F2F2F2;
 }
@@ -129,7 +131,7 @@ input[type=text] {
     background-color: white;
 }
 
- .tab1 input[type=submit] {
+.tab1 input[type=submit] {
     background-color: #0065FC;
     color: white;
     font-weight: bold;
@@ -141,17 +143,18 @@ input[type=text] {
 }
 
 input[type=submit]:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 
-.cursor{
-display: flex;
-align-items: center;
+.cursor {
+    display: flex;
+    align-items: center;
 }
 
-.tab2{
+.tab2 {
     display: none;
 }
+
 /* FIN TABLEAU FORMULAIRE */
 
 
@@ -164,8 +167,8 @@ align-items: center;
 }
 
 .filtre li {
-    margin-right: 20px;
-    padding-right: 13px;
+    margin-right: 2%;
+    padding-right: 1%;
 }
 
 .filtre li:nth-child(1) {
@@ -177,7 +180,7 @@ align-items: center;
     border-radius: 25px;
 }
 
-.filtrebis:hover{
+.filtrebis:hover {
     transition: 500ms;
     background-color: #DEEBFF;
 }
@@ -218,7 +221,7 @@ align-items: center;
 
 /* HEBERGEMENT */
 .hebergement {
-    display: flex; 
+    display: flex;
 }
 
 .star-full {
@@ -267,12 +270,12 @@ align-items: center;
     height: auto;
 }
 
-.car1_img{
+.car1_img {
     width: 230px;
     height: 110px;
 }
 
-.car1_img img{
+.car1_img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -280,42 +283,49 @@ align-items: center;
 
 .star {
     margin-left: 6%;
-    padding-bottom: 0;
 }
 
-.carte_car1:hover, .carte_car2:hover, .carte_car3_1:hover, .carte_car3_2:hover, .carte_car3_3:hover, .carte_car3_4:hover{
+.carte_car1:hover,
+.carte_car2:hover,
+.carte_car3_1:hover,
+.frioul:hover,
+.pomegues:hover,
+.carte_car3_3:hover,
+.notredamedlg:hover,
+.parc:hover {
     transform: scale(1.03);
     transition: 400ms;
 }
 
-.star h3{
+.star h3 {
     margin-top: 3%;
     margin-bottom: 0%;
 }
 
-.star span{
+.star span {
     margin-top: 3%;
 }
-.star p{
+
+.star p {
     color: rgb(60, 60, 60);
     margin-top: 3%;
     margin-bottom: 0%;
-    
 }
 
 
-.sect h2{
+.sect h2 {
     margin-bottom: 2%;
     margin-left: 4%;
     margin-top: 5%;
 }
 
-.parasect{
+.parasect {
     font-weight: bold;
     margin-left: 5%;
     margin-bottom: 5%;
     font-size: 1.3em;
 }
+
 /* FIN ***************CAR1************** */
 
 
@@ -356,14 +366,14 @@ aside {
     height: 150px;
 }
 
-.car2_img{
+.car2_img {
     width: 50%;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
     height: 150px;
 }
 
-.car2_img img{
+.car2_img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -381,18 +391,18 @@ aside {
     width: 67%;
 }
 
-.botstar{
+.botstar {
     position: absolute;
     bottom: 10px;
 }
 
-.star2 h3{
+.star2 h3 {
     margin-bottom: 0%;
 }
 
 
 
-.star2 p{
+.star2 p {
     color: rgb(60, 60, 60);
     margin-top: 3%;
     margin-bottom: 20%;
@@ -406,127 +416,138 @@ aside {
 
 /* ACTIVITES */
 
-.capt{
+.capt {
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
     box-shadow: 1px 3px 3px rgba(91, 91, 91, 0.2);
     padding-bottom: 1px;
 }
 
-.capt p{
+.capt p {
     font-weight: bold;
     margin-left: 8%;
 }
 
-.car3 img{
-    border-top-right-radius:25px ;
-    border-top-left-radius:25px ;
+.car3 img {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
-.car3{
+.car3 {
     display: flex;
     justify-content: space-between;
 }
 
 
-.carte_car3_1, .carte_car3_2, .carte_car3_3, .carte_car3_4{
+.carte_car3_1,
+.carte_car3_2,
+.carte_car3_3,
+.carte_car3_4 {
     width: 23%;
-    border-top-right-radius:25px ;
-    border-top-left-radius:25px ;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
     height: 450px;
 }
 
-.vp_img{
+.vp_img {
     height: 89%;
     overflow: hidden;
 }
 
-.pomegues{
+.pomegues {
     height: 60%;
 }
 
-.frioul{
+.frioul {
     margin-top: 6%;
     height: 35%;
 }
 
-.frioul_img, .pomegues_img{
+.frioul_img,
+.pomegues_img {
     height: 70%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-.calanque_img{
+.calanque_img {
     height: 89%;
     overflow: hidden;
 }
 
-.notredamedlg{
+.notredamedlg {
     height: 50%;
 }
 
-.notredamedlg_img, .parc_img{
+.notredamedlg_img,
+.parc_img {
     height: 80%;
     overflow: hidden;
 }
 
-.notredamedlg_img img, .parc_img img, .calanque_img img, .frioul_img img, .pomegues_img img, .vp_img img{
+.notredamedlg_img img,
+.parc_img img,
+.calanque_img img,
+.frioul_img img,
+.pomegues_img img,
+.vp_img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.parc{
+.parc {
     margin-top: 10%;
-    border-top-right-radius:25px ;
-    border-top-left-radius:25px ;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
     height: 40%;
 }
 
-.parc_img{
+.parc_img {
     border-top-right-radius: 25px;
 }
+
 /*++++++++++++++++++++++++++*/
 
 /* FOOTER */
 
-footer{
+footer {
     display: flex;
     background-color: #F2F2F2;
     margin-top: 3%;
     justify-content: center;
 }
 
-.footermid{
+.footermid {
     display: flex;
-    width: 1240px;
+    width: 1440px;
     margin: auto;
 }
 
-.ftliste p{
+.ftliste p {
     width: 150%;
     font-weight: bold;
     font-size: 1.2em;
 }
 
-.ftliste{
+.ftliste {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-right: 19%;
 }
 
-.ftliste:nth-child(2){
+.ftliste:nth-child(2) {
     padding-right: 21%;
 
 }
 
-footer li{
+footer li {
     margin-bottom: 7%;
     color: rgb(60, 60, 60);
 }
 
-footer ul{
+footer ul {
     width: 130%;
 }
 
@@ -547,41 +568,45 @@ footer ul{
         margin: auto;
     }
 
-    .hebergement{
+    .hebergement {
         flex-direction: column;
     }
-    .sect{
+
+    .sect {
         width: 100%;
         margin-bottom: 2%;
     }
 
-    aside{
+    aside {
         width: 100%;
     }
 
-    .carte_car2, .carte_car1{
+    .carte_car2,
+    .carte_car1 {
         margin-bottom: 3%;
     }
-    .calanque_img{
+
+    .calanque_img {
         height: 81%;
     }
-    .vp_img{
+
+    .vp_img {
         height: 85%;
     }
 
-    .notredamedlg{
+    .notredamedlg {
         height: 40%;
     }
 
-    .frioul{
+    .frioul {
         margin-top: 0;
     }
 
-    .parc{
+    .parc {
         margin-top: 29%;
     }
 
-    .footermid{
+    .footermid {
         margin-left: 2%;
     }
 }
@@ -594,19 +619,19 @@ footer ul{
         overflow: hidden;
     }
 
-/* HEADER */
-    .top{
+    /* HEADER */
+    .top {
         display: flex;
         justify-content: space-between;
         margin-right: 2%;
         margin-left: 2%;
     }
 
-    .txtheader{
+    .txtheader {
         line-height: 20px;
     }
 
-    .minnav{
+    .minnav {
         display: none;
     }
 
@@ -615,55 +640,52 @@ footer ul{
         justify-content: space-between;
     }
 
-    .minw p{
+    .minw p {
         text-align: center;
     }
 
-    .mind, .mind2{
+    .mind,
+    .mind2 {
         width: 50%;
     }
 
-    .mind{
+    .mind {
         border-bottom: 3px solid #0065FC;
     }
 
-    .mind2{
+    .mind2 {
         border-bottom: 3px solid #F2F2F2;
     }
 
-    nav{
+    nav {
         display: block;
     }
 
-    .bluett{
+    .bluett {
         display: inline;
         color: #0065FC;
         font-size: 1.2em;
         font-weight: bold;
     }
 
-    .filtrebis{
-        margin-bottom: 2%;
-    }
-
-    .bluet{
+    .bluet {
         display: none;
     }
 
-    .tab2{
+    .tab2 {
         display: inline;
     }
 
-    .tab2 td:nth-child(2){
+    .tab2 td:nth-child(2) {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
     }
 
-    .tab1{
+    .tab1 {
         display: none;
     }
 
-    .tdres{
+    .tdres {
         display: flex;
     }
 
@@ -678,54 +700,66 @@ footer ul{
         border: none;
     }
 
-    .cursor2{
+    .cursor2 {
         position: relative;
         align-items: center;
         display: flex;
     }
 
-    .cursor2 span{
+    .cursor2 span {
         position: absolute;
         left: 29%;
     }
-    .cursor2 span:hover{
+
+    .cursor2 span:hover {
         cursor: pointer;
     }
 
 
-    .filtre li:nth-child(1){
-        width: 100%;
+    .filtrebis {
+        margin-bottom: 3%;
     }
-/* FIN HEADER */
+
+    .filtre li:nth-child(1) {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    /* FIN HEADER */
 
 
-    .hebergement{
+    .hebergement {
         flex-direction: column-reverse;
     }
 
-    .car1{
+    .car1 {
         width: 100%;
         height: auto;
         flex-direction: column;
     }
 
-    .car1_img{
+    .car1_img {
         width: auto;
-        height:auto;
+        height: auto;
     }
 
-    .car1_img img{
-        width: 355px;
-        height: 120px;
+    .car1_img img {
+        width: 320px;
+        height: 100px;
     }
 
-    .sect{
+    .carte_car1{
+        padding: 0;
+        border: 5px solid rgba(230, 230, 230, 0.2);
+    }
+
+    .sect {
         width: 100%;
         margin-bottom: 2%;
         background-color: white;
     }
 
-    aside{
+    aside {
         width: 100%;
         margin-bottom: 5%;
         border-radius: 0px;
@@ -734,101 +768,109 @@ footer ul{
     /* ACTIVITE */
 
 
-    section{
+    section {
         margin-bottom: 5%;
     }
 
-    .car3{
+    .car3 {
         flex-direction: column;
     }
 
-    .carte_car3_1, .carte_car3_2, .carte_car3_3, .carte_car3_4{
+    .carte_car3_1,
+    .carte_car3_2,
+    .carte_car3_3,
+    .carte_car3_4 {
         width: 100%;
     }
 
 
-/* ALL IMAGES HEIGHT */
+    /* ALL IMAGES HEIGHT */
 
 
-    .capt{
+    .capt {
         height: 10%;
     }
-    .vp_img{
+
+    .vp_img {
         height: 80%;
     }
 
-    .calanque_img{
+    .calanque_img {
         height: 80%;
     }
 
-    .carte_car3_1{
+    .carte_car3_1 {
         height: 220px;
     }
 
-    .carte_car3_3{
+    .carte_car3_3 {
         height: 220px;
     }
-/* **** */
 
-    .notredamedlg{
+    /* **** */
+
+    .notredamedlg {
         height: 50%;
     }
 
-    .parc, .frioul, .pomegues{
+    .parc,
+    .frioul,
+    .pomegues {
         height: 50%;
     }
 
 
-    section{
+    section {
         margin-bottom: 10%;
         margin-left: 3%;
         margin-right: 3%;
     }
 
-    .frioul, .carte_car3_3{
+    .frioul,
+    .carte_car3_3 {
         margin-top: 0;
         margin-bottom: 0;
     }
 
-/* MARGIN ACTIVITE */
+    /* MARGIN ACTIVITE */
 
 
-    .pomegues{
+    .pomegues {
         margin-top: 5%;
     }
 
-    .carte_car3_3{
+    .carte_car3_3 {
         margin-top: 5%;
     }
 
-    .carte_car3_4{
+    .carte_car3_4 {
         margin-top: 5%;
     }
-    
-    .parc{
+
+    .parc {
         margin-top: 5%;
     }
 
     /* FOOTER */
 
-    .footermid{
+    .footermid {
         display: flex;
         flex-direction: column;
         padding-top: 4%;
         padding-bottom: 4%;
     }
 
-    .ftliste{
+    .ftliste {
         padding-bottom: 0%;
         padding-top: 0%;
         margin-left: 2%;
     }
 
-    footer{
+    footer {
         display: block;
     }
 
-    footer li{
+    footer li {
         margin-bottom: 1%;
     }
 }
