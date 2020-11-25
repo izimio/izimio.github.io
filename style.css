@@ -297,7 +297,7 @@ input[type=submit]:hover {
     transition: 400ms;
 }
 
-.star figcaption {
+.star h3 {
     font-weight: bold;
     margin-top: 3%;
     margin-bottom: 0%;
@@ -401,7 +401,7 @@ aside {
     bottom: 10px;
 }
 
-.star2 figcaption {
+.star2 h3 {
     margin-top: 8%;
     font-weight: bold;
 }
@@ -426,13 +426,13 @@ aside {
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
     box-shadow: 1px 3px 3px rgba(91, 91, 91, 0.2);
-    padding-bottom: 1px;
+    padding-bottom: 0.5px;
 }
 
-.capt figcaption {
+.capt h3 {
     font-weight: bold;
-    margin-left: 3%;
-    padding: 5%;
+    margin-left: 5%;
+    font-size: 1em;
 }
 
 .car3 img {
@@ -606,7 +606,7 @@ footer ul {
     }
 
     .notredamedlg {
-        height: 40%;
+        height: 45%;
     }
 
     .frioul {
@@ -614,7 +614,8 @@ footer ul {
     }
 
     .parc {
-        margin-top: 29%;
+        height: 33%;
+        margin-top: 34%;
     }
 
     .footermid {
@@ -803,7 +804,7 @@ footer ul {
 
 
     .capt {
-        height: 20%;
+        height: 14%;
     }
     .vp_img {
         height: 80%;
