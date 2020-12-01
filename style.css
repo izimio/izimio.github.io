@@ -49,14 +49,11 @@ h1 {
     font-size: 1.3em;
 }
 
-/*++++++++++++++++++++++++++*/
+/*++++++++++  FIN GLOBAL ++++++++++++++++*/
 
 
 /* HEADER */
 
-.minw {
-    display: none;
-}
 
 header p {
     font-size: 0.98em;
@@ -84,9 +81,20 @@ nav li {
     margin-top: -4.5%;
 }
 
-nav li:hover {
+nav li:nth-child(1),
+nav li:nth-child(2),
+nav li:nth-child(3) {
+    border-top: 5px solid white;
+}
+
+nav li:nth-child(1):hover,
+nav li:nth-child(2):hover,
+nav li:nth-child(3):hover {
     border-top: 5px solid #0065FC;
-    transition: 90ms;
+}
+
+.mobile1, .mobile2{
+    display: none;
 }
 
 
@@ -107,31 +115,42 @@ nav li:hover {
 }
 
 /* TABLEAU FORMULAIRE */
-table {
-    border-collapse: collapse;
+
+.table{
+    display: flex;
+    
 }
 
-table td:nth-child(1) {
+.ico{
     padding: 12px;
+    padding-right: 15px;
+    padding-left: 15px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     background-color: #F2F2F2;
 }
 
-table td:nth-child(2),
-.tab2 td:nth-child(2) {
-    border-top: 1px solid #F2F2F2;
-    border-bottom: 1px solid #F2F2F2;
+.look{
+   border-top: 1px solid #F2F2F2;
+   border-bottom: 1px solid #F2F2F2;
+    display: flex;
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 500px;
+
 }
 
+.look span{
+    display: none;
+}
 
 input[type=text] {
     font-weight: bold;
     border: none;
     background-color: white;
+    margin-left: 5px;
 }
 
-.tab1 input[type=submit] {
+ input[type=submit] {
     background-color: #0065FC;
     color: white;
     font-weight: bold;
@@ -140,19 +159,25 @@ input[type=text] {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border: none;
+    width: 105px;
 }
 
 input[type=submit]:hover {
     cursor: pointer;
 }
 
-.cursor {
-    display: flex;
-    align-items: center;
+.cursor p{
+    position: absolute;
+    left: 7px;
+    top: -3px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.tab2 {
-    display: none;
+.cursor {
+    position: relative;
+    display: flex;
 }
 
 /* FIN TABLEAU FORMULAIRE */
@@ -238,11 +263,9 @@ input[type=submit]:hover {
     border-top-left-radius: 25px;
 }
 
-
-
 /* SECT */
 
-.sect {
+section:nth-child(1) {
     width: 66%;
     background-color: #F2F2F2;
     border-radius: 25px;
@@ -313,8 +336,7 @@ input[type=submit]:hover {
     margin-bottom: 0%;
 }
 
-
-.sect h2 {
+section:nth-child(1) h2 {
     margin-bottom: 2%;
     margin-left: 4%;
     margin-top: 5%;
@@ -332,7 +354,7 @@ input[type=submit]:hover {
 
 /* ASIDE */
 
-aside header {
+section:nth-child(2) header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -340,7 +362,7 @@ aside header {
     margin-left: 5%;
 }
 
-aside {
+section:nth-child(2) {
     width: 33%;
     background-color: #F2F2F2;
     border-radius: 25px;
@@ -402,6 +424,7 @@ aside {
 }
 
 .star2 h3 {
+    width: 80%;
     margin-top: 8%;
     font-weight: bold;
 }
@@ -410,7 +433,6 @@ aside {
 
 .star2 p {
     color: rgb(60, 60, 60);
-    margin-top: 3%;
     margin-bottom: 20%;
 }
 
@@ -558,7 +580,7 @@ footer ul {
     width: 130%;
 }
 
-/*++++++++++++++++++++++++++*/
+/*++++++++++++  FIN FOOTER ++++++++++++++*/
 
 
 /* QUERIES */
@@ -583,12 +605,12 @@ footer ul {
         flex-direction: column;
     }
 
-    .sect {
+    section:nth-child(1) {
         width: 100%;
         margin-bottom: 2%;
     }
 
-    aside {
+    section:nth-child(2) {
         width: 100%;
     }
 
@@ -643,34 +665,28 @@ footer ul {
         line-height: 20px;
     }
 
-    .minnav {
+    .desk{
         display: none;
     }
-
-    .minw {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .minw p {
+    .mobile1, .mobile2{
+        display: inline;
         text-align: center;
+        padding-bottom: 5px;
     }
 
-    .mind,
-    .mind2 {
+    .mobile1{
         width: 50%;
-    }
-
-    .mind {
         border-bottom: 3px solid #0065FC;
     }
 
-    .mind2 {
+    .mobile2{
+        width: 50%;
         border-bottom: 3px solid #F2F2F2;
     }
 
     nav {
         display: block;
+        margin-bottom: 5%;
     }
 
     .bluett {
@@ -684,15 +700,6 @@ footer ul {
         display: none;
     }
 
-    .tab2 {
-        display: inline;
-    }
-
-    .tab2 td:nth-child(2) {
-        border-bottom-right-radius: 20px;
-        border-top-right-radius: 20px;
-    }
-
     .tab1 {
         display: none;
     }
@@ -701,7 +708,7 @@ footer ul {
         display: flex;
     }
 
-    .tab2 input[type=submit] {
+    .table input[type=submit] {
         background-color: #0065FC;
         color: white;
         font-weight: bold;
@@ -710,20 +717,30 @@ footer ul {
         padding-left: 30px;
         border-radius: 15px;
         border: none;
+        width: 35px;
     }
 
-    .cursor2 {
+
+    .look span{
+        display: inline-block;
+    }
+
+    .cursor {
         position: relative;
         align-items: center;
         display: flex;
     }
 
-    .cursor2 span {
+    .cursor p{
+        display: none;
+    }
+
+    .cursor span {
         position: absolute;
         left: 29%;
     }
 
-    .cursor2 span:hover {
+    .cursor span:hover {
         cursor: pointer;
     }
 
@@ -743,6 +760,10 @@ footer ul {
 
     /* FIN HEADER */
 
+
+    main{
+        margin-bottom: 10%;
+    }
 
     .hebergement {
         flex-direction: column-reverse;
@@ -769,13 +790,13 @@ footer ul {
         border: 5px solid rgba(230, 230, 230, 0.2);
     }
 
-    .sect {
+    section:nth-child(1) {
         width: 100%;
         margin-bottom: 2%;
         background-color: white;
     }
 
-    aside {
+    section:nth-child(2) {
         width: 100%;
         margin-bottom: 5%;
         border-radius: 0px;
@@ -784,7 +805,7 @@ footer ul {
     /* ACTIVITE */
 
 
-    section {
+    section:nth-child(3) {
         margin-bottom: 5%;
     }
 
@@ -835,7 +856,7 @@ footer ul {
     }
 
 
-    section {
+    section:nth-child(3) {
         margin-bottom: 10%;
         margin-left: 3%;
         margin-right: 3%;
