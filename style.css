@@ -744,6 +744,18 @@ footer ul {
         cursor: pointer;
     }
 
+    .cursor::after{
+        font-family: "Font Awesome 5 Free";
+        content: "\f002";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        left: 13px;
+        color: white;
+    }
+
     .filtre{
         flex-wrap: wrap;
         margin-right: 6%;
