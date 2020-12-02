@@ -735,15 +735,6 @@ footer ul {
         display: none;
     }
 
-    .cursor span {
-        position: absolute;
-        left: 29%;
-    }
-
-    .cursor span:hover {
-        cursor: pointer;
-    }
-
     .cursor::after{
         font-family: "Font Awesome 5 Free";
         content: "\f002";
@@ -754,6 +745,7 @@ footer ul {
         position: absolute;
         left: 13px;
         color: white;
+        cursor: pointer;
     }
 
     .filtre{
