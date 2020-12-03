@@ -1,0 +1,349 @@
+
+/* ALERTE */
+/* ALERTE */
+/* ALERTE */
+/* ALERTE */
+/* ALERTE */
+/* ALERTE */
+
+/* -----  IMPORT --- */
+@import "./Base/font";
+@import "./Utils/variables";
+@import "./Utils/mixin";
+
+/* ++++ IMPORT +++++*/
+
+
+/* ----- GLOBAL ----- */
+
+html, body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+#bloc_page{
+    max-width: 560px;
+    margin: auto;
+    width: auto;
+}
+
+.primary{
+    color: $cd-primary
+}
+
+.secondary{
+    color: $cd-secondary;
+}
+
+.tertiary{
+    color: $cd-tertiary;
+}
+
+.darkgrey{
+    color: darken($cd-grey,45);
+}
+
+
+/* ++++ GLOBAL +++ */
+
+
+.lds-dual-ring {
+    z-index: 5;
+    position: absolute;
+    transition: 0ms;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 40%;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 6px solid $cd-primary;
+    border-color: $cd-primary transparent $cd-tertiary transparent;
+    animation: lds-dual-ring 1s ease-in-out ;
+    animation-iteration-count: 3;
+  }
+
+/* ----- HEDEAR ----- */
+
+.fullhead{
+    &_img{
+        text-align: center;
+        padding-bottom: 2%;
+    }
+    &_find{
+        background-color: lighten($color: $cd-grey, $amount: 3);
+        display: flex;
+        flex-direction: column;
+        &_locate{
+            border-top:  3px solid rgba($color: darken($cd-grey,55), $alpha: 0.2);
+            display: flex;
+            font-weight: bold;
+            justify-content: center;
+            i{
+                padding-right: 1em;
+            }
+            p{
+                padding-right: 3em;
+            }
+            align-items: center;
+            background-color: $cd-grey;
+        }
+        &_book{
+            display: flex;
+            flex-direction: column;
+            &-txt{
+                margin-top: 6%;
+                margin-left: 10%;
+                margin-right: 10%;
+                h1{
+                    font-size: 1.5em;
+                    text-align: center;
+                    font-weight: bolder;
+                }
+                p{
+                    text-align: center;
+                    font-weight: 100;
+                    color: darken($cd-grey,55);
+                }
+                margin-bottom: 5%;
+            }
+            &-btn{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                font-size: 0.6em;
+                border-radius: 25px;
+                margin-left: 18%;
+                margin-right: 18%;
+                a{
+                    background: linear-gradient(160deg, $cd-secondary, $cd-primary);
+                    color: white;
+                    padding: 1% 13% 1% 12%;
+                    border-radius: 25px;
+                    box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
+                    &:hover{
+                        @include btn;
+                    }
+                }
+            }
+        }
+        padding-bottom: 15%;
+    }
+    &_function{
+        margin-left: 3%;
+        margin-right: 2%;
+        height: auto;
+        margin-bottom: 10%;
+        h2{
+            margin-bottom: 0%;
+        }
+        &_card{
+            height: 280px;
+            margin-left: 4%;
+            margin-right: 2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            &_entity{
+                position: relative;
+                display: flex;
+                align-items: center;
+                background-color: lighten($cd-grey,2);
+                box-shadow: 1px 1px 15px 0px rgba($color: $cd-grey, $alpha: 1);
+                border-radius: 25px;
+                padding: 2%;
+                &-num{
+                    top: 33%;
+                    left: -3%;
+                    position: absolute;
+                    border-radius: 50%;
+                    height: 23px;
+                    width: 23px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    background-color: $cd-primary;
+                    p{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding-right: 10%;
+                    }
+                 }
+                i{
+                    margin-left: 10%;
+                    transform: scale(1.2);
+                }
+                p{
+                    margin-left: 10%;
+                    font-weight: bold;
+                    font-size: 0.9em;
+                }
+                &:nth-child(3){
+                    background-color: lighten($cd-primary,35);
+                }
+            }
+        }
+    }
+}
+
+/* ++++ HEDEAR +++ */
+/* ++++ MAIN ++++*/
+main{
+    background-color: lighten($cd-grey,2);
+    padding-bottom: 10%;
+}
+
+.fullmain{
+    margin-left: 4%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    &_tilte{
+        padding-top: 6%;
+    }
+    &_allcards{
+        height: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: -5%;
+    }
+    &_eachcards{
+        position: relative;
+        width: 330px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
+        border-radius: 15px;
+        &-img{
+            height: 70%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+        }
+        &-caption{
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            &-txt{
+                margin-left: 4%;
+                h2{
+                    font-size: 1em;
+                    margin-bottom: 0%;
+                    font-weight: bold;
+                }
+                p{
+                    margin-top: 0%;
+                    font-weight: lighter;
+                }
+            }
+            &-heart{
+                position: relative;
+                margin-right: 8%;
+                transform: scale(1.7);
+                color: $cd-grey;
+                margin-bottom: 2%;
+                &:hover{
+                    color: transparent;
+                    &::after{
+                        font-family: "Font Awesome 5 Free";
+                        content: "\f004";
+                        display: inline-block;
+                        padding-right: 3px;
+                        vertical-align: middle;
+                        font-weight: 800;
+                        position: absolute;
+                        left: -30%;
+                        top: -25%;
+                        padding: 30%;
+                        color: linear-gradient(160deg, $cd-secondary, $cd-primary);
+                        cursor: pointer;
+                        background-image: linear-gradient(160deg, $cd-secondary, $cd-primary);
+                        background-clip: text;
+                        animation: appear 500ms ease-in-out alternate;
+                    }
+                }
+            }
+        }
+        h3{
+            position: absolute;
+            top: -1%;
+            right: 4%;
+            font-size: 1em;
+            background-color: $cd-tertiary;
+            color: darken($cd-tertiary,40);
+            padding: 2% 3% 2% 3%;
+            border-radius: 5px;
+        }
+    }
+}
+
+/* ---- MAIN ---- */
+/* ++++ FOOTER +++ */
+footer{
+    background-color: rgb(53, 53, 53);
+    color: white;
+    padding-bottom: 10%;
+}
+.fullfooter{
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+    a{
+        color: white;
+    }
+    h2{
+        color: white;
+        font-family: "Shrikhand";
+        margin-bottom: 1%;
+    }
+    &_liste{
+        &-first{
+            margin-left: 1%;
+            display: flex;
+            align-items: center;
+            i{
+                padding-right: 4%;
+            }
+        }
+        &-second{
+            margin-top: -5%;
+            display: flex;
+            align-items: center;
+            i{
+                transform: scaleX(0.7);
+                padding-right: 3%;
+            }
+        }
+        &-third{
+            margin-top: -5%;
+            margin-left: 1%;
+            p{
+                margin-top: 5%;
+                margin-bottom: 4%;
+            }
+        }
+    }
+}

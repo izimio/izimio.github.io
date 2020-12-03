@@ -1,0 +1,26 @@
+    @font-face {
+    font-family: "RobotoR";
+    src: url("../../font/Roboto-Regular.ttf") format("ttf"),
+   }
+
+   @font-face {
+    font-family: "RobotoB";
+    font-style: bold;
+    src: url("../../font/Roboto-Bold.ttf") format('ttf');
+   }
+
+   @font-face {
+    font-family: "RobotoL";
+    font-style: thin;
+    src: url("../../font/Roboto-Thin.ttf") format('ttf');
+   }
+
+   @font-face{
+       font-family: "Shrikhand";
+       src: url("../../font/Shrikhand-Regular.ttf") format("ttf");
+   }
+
+   html, body{
+    font-family: "RobotoL", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
