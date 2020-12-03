@@ -23,27 +23,11 @@ html, body {
   font-family: "RobotoL", Arial, Helvetica, sans-serif;
   overflow-x: hidden; }
 
-@-webkit-keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg) scale(5); }
-  100% {
-    transform: rotate(360deg) scale(5); } }
-
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg) scale(5); }
   100% {
     transform: rotate(360deg) scale(5); } }
-@-webkit-keyframes appear {
-  0% {
-    opacity: 0;
-    transform: scale(0); }
-  75% {
-    opacity: 1;
-    transform: scale(1.5); }
-  100% {
-    opacity: 1;
-    transform: scale(1); } }
 @keyframes appear {
   0% {
     opacity: 0;
@@ -54,6 +38,11 @@ html, body {
   100% {
     opacity: 1;
     transform: scale(1); } }
+@keyframes disappear {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
 /* ++++ IMPORT +++++*/
 /* ----- GLOBAL ----- */
 html, body {
@@ -80,14 +69,19 @@ a {
   color: #777777; }
 
 /* ++++ GLOBAL +++ */
+.spinner {
+  z-index: -1;
+  animation: disappear 5ms;
+  animation-delay: 3300ms;
+  animation-fill-mode: forwards; }
+
 .lds-dual-ring {
-  z-index: 5;
   position: absolute;
   transition: 0ms;
   display: inline-block;
   width: 80px;
   height: 80px;
-  top: 50%;
+  top: 30%;
   left: 40%; }
 
 .lds-dual-ring:after {
@@ -98,10 +92,10 @@ a {
   border-radius: 50%;
   border: 6px solid #9356DC;
   border-color: #9356DC transparent #99E2D0 transparent;
-  -webkit-animation: lds-dual-ring 1s ease-in-out;
-          animation: lds-dual-ring 1s ease-in-out;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3; }
+  animation: lds-dual-ring 1s ease-in-out;
+  animation-iteration-count: 3;
+  animation-delay: 300ms;
+  animation-fill-mode: backwards; }
 
 /* ----- HEDEAR ----- */
 .fullhead_img {
@@ -217,6 +211,9 @@ main {
   margin-right: 2%;
   display: flex;
   flex-direction: column; }
+  .fullmain a {
+    color: black;
+    text-decoration: none; }
   .fullmain_tilte {
     padding-top: 6%; }
   .fullmain_allcards {
@@ -234,13 +231,15 @@ main {
     flex-direction: column;
     box-shadow: 1px 1px 15px 0px #848484;
     border-radius: 15px; }
+    .fullmain_eachcards:hover {
+      transform: scale(1.01);
+      transition: 400ms; }
     .fullmain_eachcards-img {
       height: 70%; }
       .fullmain_eachcards-img img {
         width: 100%;
         height: 100%;
-        -o-object-fit: cover;
-           object-fit: cover;
+        object-fit: cover;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px; }
     .fullmain_eachcards-caption {
@@ -282,10 +281,8 @@ main {
             color: linear-gradient(160deg, #FF79DA, #9356DC);
             cursor: pointer;
             background-image: linear-gradient(160deg, #FF79DA, #9356DC);
-            -webkit-background-clip: text;
-                    background-clip: text;
-            -webkit-animation: appear 400ms ease-in-out alternate;
-                    animation: appear 400ms ease-in-out alternate;
+            background-clip: text;
+            animation: appear 400ms ease-in-out alternate;
             background-color: transparent; }
     .fullmain_eachcards h3 {
       position: absolute;
@@ -313,7 +310,7 @@ footer {
   .fullfooter h2 {
     color: white;
     font-family: "Shrikhand";
-    margin-bottom: 1%;
+    margin-bottom: 1%; }
   .fullfooter_liste-first {
     margin-left: 1%;
     display: flex;
@@ -332,4 +329,6 @@ footer {
     margin-left: 1%; }
     .fullfooter_liste-third p {
       margin-top: 5%;
-      margin-bottom: 4%; } }
+      margin-bottom: 4%; }
+
+/*# sourceMappingURL=style.css.map */
