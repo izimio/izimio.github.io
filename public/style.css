@@ -56,14 +56,18 @@ html, body {
     transform: scale(1); } }
 @-webkit-keyframes disappear {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    z-index: 2; }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+    z-index: 2; } }
 @keyframes disappear {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    z-index: 2; }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+    z-index: 2; } }
 /* ++++ IMPORT +++++*/
 /* ----- GLOBAL ----- */
 html, body {
@@ -266,31 +270,35 @@ main {
       height: 70%; }
       .fullmain_eachcards-img img {
         width: 100%;
-        height: 100%;
+        height: 140px;
         -o-object-fit: cover;
            object-fit: cover;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px; }
     .fullmain_eachcards-caption {
-      height: 30%;
-      display: flex;
-      align-items: center;
+      height: 60px;
       justify-content: space-between;
       background-color: white;
       border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px; }
+      border-bottom-right-radius: 15px;
+      position: relative; }
       .fullmain_eachcards-caption-txt {
-        padding-left: 4%;
+        border: 2px solid transparent;
+        padding-bottom: 0.5%;
         width: 100%; }
         .fullmain_eachcards-caption-txt h2 {
           font-size: 1em;
           margin-bottom: 0%;
-          font-weight: bold; }
+          font-weight: bold;
+          margin-left: 4%; }
         .fullmain_eachcards-caption-txt p {
           margin-top: 0%;
-          font-weight: lighter; }
+          font-weight: lighter;
+          margin-left: 4%; }
       .fullmain_eachcards-caption-heart {
-        position: relative;
+        position: absolute;
+        top: 30%;
+        left: 88%;
         margin-right: 8%;
         transform: scale(1.7);
         color: #eaeaea;
@@ -331,7 +339,7 @@ main {
 footer {
   background-color: #353535;
   color: white;
-  padding-bottom: 10%; }
+  padding-bottom: 8%; }
 
 .fullfooter {
   margin-left: 8%;
@@ -346,7 +354,8 @@ footer {
   .fullfooter_liste-first {
     margin-left: 1%;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 1%; }
     .fullfooter_liste-first i {
       padding-right: 4%; }
   .fullfooter_liste-second {
@@ -357,8 +366,7 @@ footer {
       transform: scaleX(0.7);
       padding-right: 3%; }
   .fullfooter_liste-third {
-    margin-top: -5%;
+    margin-top: -4%;
     margin-left: 1%; }
     .fullfooter_liste-third p {
-      margin-top: 5%;
-      margin-bottom: 4%; }
+      margin-bottom: 2%; }
