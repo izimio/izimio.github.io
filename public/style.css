@@ -264,7 +264,8 @@ main {
             cursor: pointer;
             background-image: linear-gradient(160deg, #FF79DA, #9356DC);
             background-clip: text;
-            animation: appear 500ms ease-in-out alternate; }
+            animation: appear 400ms ease-in-out alternate;
+            background-color: transparent; }
     .fullmain_eachcards h3 {
       position: absolute;
       top: -1%;
