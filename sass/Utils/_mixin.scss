@@ -38,3 +38,34 @@
     }
   }
 
+@keyframes move{
+  0%{
+    transform: translateX(0%)
+  } 
+  100%{
+    transform: translateX(-180%);
+  }
+}
+
+@keyframes comehere{
+  0%{
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  to{
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
+@keyframes turn{
+  0%{
+    transform: rotate(0deg) scale(1.6)
+  }
+  80%{
+    transform: rotate(400deg) scale(1.6)
+  }
+  100%{
+    transform: rotate(360deg) scale(1.6)
+  }
+}

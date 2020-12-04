@@ -1,0 +1,29 @@
+html, body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+#bloc_page{
+    max-width: 560px;
+    margin: auto;
+    width: auto;
+}
+
+.primary{
+    color: $cd-primary
+}
+
+.secondary{
+    color: $cd-secondary;
+}
+
+.tertiary{
+    color: $cd-tertiary;
+}
+
+.darkgrey{
+    color: darken($cd-grey,45);
+}
