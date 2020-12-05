@@ -7,9 +7,17 @@ a{
 }
 
 #bloc_page{
-    max-width: 560px;
     margin: auto;
     width: auto;
+    @media all and (max-width: map-get($breakpoints, mobile)){
+        max-width: map-get($breakpoints, mobile);
+    }
+    @media all and (max-width: map-get($breakpoints, mid)){
+        max-width: map-get($breakpoints, mid);
+    }
+    @media all and (max-width: map-get($breakpoints, huge)){
+        max-width: map-get($breakpoints, huge);
+    }
 }
 
 .primary{

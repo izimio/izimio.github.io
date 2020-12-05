@@ -58,6 +58,17 @@
   }
 }
 
+@keyframes reversecomehere{
+  0%{
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  to{
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
 @keyframes turn{
   0%{
     transform: rotate(0deg) scale(1.6)
@@ -72,9 +83,20 @@
 
 @keyframes move2{
   0%{
-    transform: translateX(80%)
+    transform: translateX(120%)
   } 
   100%{
-    transform: translateX(-80%);
+    transform: translateX(-120%);
   }
+}
+
+@keyframes appearsection{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(-5%);
+  }
+
 }

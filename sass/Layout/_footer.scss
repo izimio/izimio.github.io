@@ -1,44 +1,154 @@
-footer{
-    background-color: rgb(53, 53, 53);
-    color: white;
-    padding-bottom: 8%;
+@media all and (max-width: map-get($breakpoints, mobile)){
+    footer{
+        background-color: rgb(53, 53, 53);
+        color: white;
+        padding-bottom: 8%;
+    }
+    .fullfooter{
+        margin-left: 8%;
+        display: flex;
+        flex-direction: column;
+        a{
+            color: white;
+        }
+        h2{
+            color: white;
+            font-family: "Shrikhand";
+        }
+        &_liste{
+            &-first{
+                margin-left: 0.3em;
+                display: flex;
+                align-items: center;
+                i{
+                    padding-right: 1em;
+                }
+            }
+            &-second{
+                margin-top: -1em;
+                display: flex;
+                align-items: center;
+                i{
+                    transform: scaleX(0.7);
+                    padding-right: 1em;
+                }
+            }
+            &-third{
+                margin-top: -1.2em;
+                margin-left: 0.3em;
+                p{
+                    margin-bottom: 2%;
+                }
+            }
+            &-fourth{
+                margin-left: 0.3em;
+
+            }
+        }
+    }
 }
-.fullfooter{
-    margin-left: 8%;
-    display: flex;
-    flex-direction: column;
-    a{
+@media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, mid)){
+    footer{
+        background-color: rgb(53, 53, 53);
         color: white;
+        padding-bottom: 8%;
     }
-    h2{
-        color: white;
-        font-family: "Shrikhand";
-        margin-bottom: 1%;
-    }
-    &_liste{
-        &-first{
-            margin-left: 1%;
+    .fullfooter{
+        display: flex;
+        flex-direction: column;
+        a{
+            color: white;
+        }
+        h2{
+            color: white;
+            font-family: "Shrikhand";
+            text-align: center;
+            font-size: 2em;
+        }
+        &_liste{
             display: flex;
             align-items: center;
-            margin-bottom: 1%;
-            i{
-                padding-right: 4%;
+            justify-content: space-evenly;
+            &-first{
+                margin-left: 0.3em;
+                display: flex;
+                align-items: center;
+                i{
+                    padding-right: 1em;
+                }
+            }
+            &-second{
+                display: flex;
+                align-items: center;
+                i{
+                    transform: scaleX(0.7);
+                    padding-right: 1em;
+                }
+            }
+            &-third{
+                display: flex;
+                align-items: center;
+                margin-left: 0.3em;
+                p{
+                }
+            }
+            &-fourth{
+                margin-left: 0.3em;
+
             }
         }
-        &-second{
-            margin-top: -5%;
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, mid)){
+    footer{
+        background-color: rgb(53, 53, 53);
+        color: white;
+        padding-bottom: 2%;
+    }
+    .fullfooter{
+        display: flex;
+        flex-direction: column;
+        a{
+            color: white;
+        }
+        h2{
+            color: white;
+            font-family: "Shrikhand";
+            text-align: center;
+            font-size: 2em;
+        }
+        &_liste{
+            padding-bottom: 1%;
             display: flex;
             align-items: center;
-            i{
-                transform: scaleX(0.7);
-                padding-right: 3%;
+            justify-content: space-evenly;
+            &-first{
+                margin-left: 0.3em;
+                display: flex;
+                align-items: center;
+                i{
+                    padding-right: 1em;
+                }
             }
-        }
-        &-third{
-            margin-top: -4%;
-            margin-left: 1%;
-            p{
-                margin-bottom: 2%;
+            &-second{
+                display: flex;
+                align-items: center;
+                i{
+                    transform: scaleX(0.7);
+                    padding-right: 1em;
+                }
+            }
+            &-third{
+                display: flex;
+                align-items: center;
+                margin-left: 0.3em;
+                p{
+                }
+            }
+            &-fourth{
+                margin-left: 0.3em;
+
             }
         }
     }

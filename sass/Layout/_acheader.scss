@@ -1,121 +1,385 @@
-.fullhead{
-    &_img{
-        text-align: center;
-        padding-bottom: 2%;
-    }
-    &_find{
-        background-color: lighten($color: $cd-grey, $amount: 3);
-        display: flex;
-        flex-direction: column;
-        &_locate{
-            border-top:  3px solid rgba($color: darken($cd-grey,55), $alpha: 0.2);
-            display: flex;
-            font-weight: bold;
-            justify-content: center;
-            i{
-                padding-right: 1em;
-            }
-            p{
-                padding-right: 3em;
-            }
-            align-items: center;
-            background-color: $cd-grey;
+@media all and (max-width: map-get($breakpoints, mobile)){
+    .fullhead{
+        &_img{
+            text-align: center;
+            padding-bottom: 2%;
         }
-        &_book{
+        &_find{
+            background-color: lighten($color: $cd-grey, $amount: 3);
             display: flex;
             flex-direction: column;
-            &-txt{
-                margin-top: 6%;
-                margin-left: 10%;
-                margin-right: 10%;
-                h1{
-                    font-size: 1.5em;
-                    text-align: center;
-                    font-weight: bolder;
-                }
-                p{
-                    text-align: center;
-                    font-weight: 100;
-                    color: darken($cd-grey,55);
-                }
-                margin-bottom: 5%;
-            }
-            &-btn{
+            &_locate{
+                border-top:  3px solid rgba($color: darken($cd-grey,55), $alpha: 0.2);
                 display: flex;
-                flex-wrap: wrap;
+                font-weight: bold;
                 justify-content: center;
-                text-align: center;
-                font-size: 0.6em;
-                border-radius: 25px;
-                margin-left: 18%;
-                margin-right: 18%;
-                a{
-                    background: linear-gradient(160deg, $cd-secondary, $cd-primary);
-                    color: white;
-                    padding: 1% 13% 1% 12%;
+                i{
+                    padding-right: 1em;
+                }
+                p{
+                    padding-right: 3em;
+                }
+                align-items: center;
+                background-color: $cd-grey;
+            }
+            &_book{
+                display: flex;
+                flex-direction: column;
+                &-txt{
+                    margin-top: 6%;
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    h1{
+                        font-size: 1.5em;
+                        text-align: center;
+                        font-weight: bolder;
+                    }
+                    p{
+                        text-align: center;
+                        font-weight: 100;
+                        color: darken($cd-grey,55);
+                    }
+                    margin-bottom: 5%;
+                }
+                &-btn{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                    font-size: 0.6em;
                     border-radius: 25px;
-                    box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
-                    &:hover{
-                        @include btn;
+                    margin-right: 18%;
+                    margin-left: 18%;
+                    a{
+                        background: linear-gradient(160deg, $cd-secondary, $cd-primary);
+                        color: white;
+                        padding: 1% 13% 1% 12%;
+                        border-radius: 25px;
+                        box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
+                        &:hover{
+                            @include btn;
+                        }
+                    }
+                }
+            }
+            padding-bottom: 15%;
+        }
+        &_function{
+            margin-left: 3%;
+            margin-right: 2%;
+            height: auto;
+            margin-bottom: 10%;
+            h2{
+                margin-bottom: 0%;
+            }
+            &_card{
+                height: 280px;
+                margin-left: 4%;
+                margin-right: 2%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                &_entity{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background-color: lighten($cd-grey,2);
+                    box-shadow: 1px 1px 15px 0px rgba($color: $cd-grey, $alpha: 1);
+                    border-radius: 25px;
+                    padding: 2%;
+                    &-num{
+                        top: 33%;
+                        left: -0.5em;
+                        position: absolute;
+                        border-radius: 50%;
+                        height: 23px;
+                        width: 23px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        background-color: $cd-primary;
+                        p{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding-right: 10%;
+                        }
+                    }
+                    i{
+                        margin-left: 10%;
+                        transform: scale(1.2);
+                    }
+                    p{
+                        margin-left: 10%;
+                        font-weight: bold;
+                        font-size: 0.9em;
+                    }
+                    &:nth-child(3){
+                        background-color: lighten($cd-primary,35);
                     }
                 }
             }
         }
-        padding-bottom: 15%;
     }
-    &_function{
-        margin-left: 3%;
-        margin-right: 2%;
-        height: auto;
-        margin-bottom: 10%;
-        h2{
-            margin-bottom: 0%;
+}
+
+@media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, mid)){
+    .fullhead{
+        &_img{
+            text-align: center;
+            padding-bottom: 2%;
         }
-        &_card{
-            height: 280px;
-            margin-left: 4%;
-            margin-right: 2%;
+        &_find{
+            background-color: lighten($color: $cd-grey, $amount: 3);
+            border-radius: 15px;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            &_entity{
-                position: relative;
+            &_locate{
+                border-top:  3px solid rgba($color: darken($cd-grey,55), $alpha: 0.2);
                 display: flex;
-                align-items: center;
-                background-color: lighten($cd-grey,2);
-                box-shadow: 1px 1px 15px 0px rgba($color: $cd-grey, $alpha: 1);
-                border-radius: 25px;
-                padding: 2%;
-                &-num{
-                    top: 33%;
-                    left: -3%;
-                    position: absolute;
-                    border-radius: 50%;
-                    height: 23px;
-                    width: 23px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    background-color: $cd-primary;
-                    p{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding-right: 10%;
-                    }
-                 }
+                font-weight: bold;
+                justify-content: center;
                 i{
-                    margin-left: 10%;
-                    transform: scale(1.2);
+                    padding-right: 1em;
                 }
                 p{
-                    margin-left: 10%;
-                    font-weight: bold;
-                    font-size: 0.9em;
+                    padding-right: 3em;
                 }
-                &:nth-child(3){
-                    background-color: lighten($cd-primary,35);
+                align-items: center;
+                background-color: $cd-grey;
+            }
+            &_book{
+                display: flex;
+                flex-direction: column;
+                &-txt{
+                    margin-top: 6%;
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    h1{
+                        font-size: 1.5em;
+                        text-align: center;
+                        font-weight: bolder;
+                    }
+                    p{
+                        text-align: center;
+                        font-weight: 100;
+                        color: darken($cd-grey,55);
+                    }
+                    margin-bottom: 5%;
+                }
+                &-btn{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                    font-size: 0.6em;
+                    border-radius: 25px;
+                    margin-right: 18%;
+                    margin-left: 18%;
+                    a{
+                        background: linear-gradient(160deg, $cd-secondary, $cd-primary);
+                        color: white;
+                        padding: 1% 13% 1% 12%;
+                        border-radius: 25px;
+                        box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
+                        &:hover{
+                            @include btn;
+                        }
+                    }
+                }
+            }
+            padding-bottom: 15%;
+        }
+        &_function{
+            margin-left: 3%;
+            margin-right: 2%;
+            height: auto;
+            margin-bottom: 10%;
+            h2{
+                text-align: center;
+                margin-bottom: 7%;
+            }
+            &_card{
+                height: 150px;
+                margin-left: 0%;
+                margin-right: 2%;
+                display: flex;
+                justify-content: space-between;
+                &_entity{
+                    width: 25%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background-color: lighten($cd-grey,2);
+                    box-shadow: 1px 1px 15px 0px rgba($color: $cd-grey, $alpha: 1);
+                    border-radius: 15px;
+                    padding: 2%;
+                    &-num{
+                        top: -10%;
+                        left: 42%;
+                        position: absolute;
+                        border-radius: 50%;
+                        height: 33px;
+                        width: 33px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        background-color: $cd-primary;
+                        p{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding-right: 10%;
+                            font-weight: bold;
+                            font-size: 0.9em;
+                        }
+                    }
+                    i{
+                        margin-left: 10%;
+                        transform: scale(1.2);
+                    }
+                    & p{
+                        margin-left: 10%;
+                        font-weight: bold;
+                        font-size: 0.9em;
+                    }
+                    &:nth-child(3){
+                        background-color: lighten($cd-primary,35);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, mid)){
+    .fullhead{
+        &_img{
+            text-align: center;
+            padding-bottom: 1%;
+        }
+        &_find{
+            background-color: lighten($color: $cd-grey, $amount: 3);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            &_locate{
+                border-top:  3px solid rgba($color: darken($cd-grey,55), $alpha: 0.2);
+                display: flex;
+                font-weight: bold;
+                justify-content: center;
+                i{
+                    padding-right: 1em;
+                }
+                p{
+                    padding-right: 3em;
+                }
+                align-items: center;
+                background-color: $cd-grey;
+            }
+            &_book{
+                display: flex;
+                flex-direction: column;
+                &-txt{
+                    margin-top: 2%;
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    h1{
+                        font-size: 1.5em;
+                        text-align: center;
+                        font-weight: bolder;
+                    }
+                    p{
+                        text-align: center;
+                        font-weight: 100;
+                        color: darken($cd-grey,55);
+                    }
+                    margin-bottom: 2%;
+                }
+                &-btn{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                    font-size: 0.6em;
+                    border-radius: 25px;
+                    margin-right: 25%;
+                    margin-left: 25%;
+                    a{
+                        background: linear-gradient(160deg, $cd-secondary, $cd-primary);
+                        color: white;
+                        padding: 1% 13% 1% 12%;
+                        border-radius: 25px;
+                        box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
+                        &:hover{
+                            @include btn;
+                        }
+                    }
+                }
+            }
+            padding-bottom: 5%;
+        }
+        &_function{
+            margin-left: 3%;
+            margin-right: 2%;
+            height: auto;
+            margin-bottom: 10%;
+            h2{
+                text-align: center;
+                margin-bottom: 5%;
+                font-size: 3em;
+            }
+            &_card{
+                height: 250px;
+                margin-left: 0%;
+                margin-right: 2%;
+                display: flex;
+                justify-content: space-between;
+                &_entity{
+                    width: 25%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background-color: lighten($cd-grey,2);
+                    box-shadow: 1px 1px 15px 0px rgba($color: $cd-grey, $alpha: 1);
+                    border-radius: 15px;
+                    padding: 2%;
+                    &-num{
+                        top: -5%;
+                        left: 46%;
+                        position: absolute;
+                        border-radius: 50%;
+                        height: 33px;
+                        width: 33px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        background-color: $cd-primary;
+                        margin-bottom: 0%;
+                        p{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding-right: 10%;
+                            font-weight: bold;
+                            font-size: 0.9em;
+                        }
+                    }
+                    i{
+                        transform: scale(3);
+                        margin-left: 2em;
+                    }
+                    & p{
+                        margin-left: 10%;
+                        font-weight: bold;
+                        font-size: 1em;
+                    }
+                    &:nth-child(3){
+                        background-color: lighten($cd-primary,35);
+                    }
                 }
             }
         }
