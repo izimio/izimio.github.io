@@ -48,11 +48,27 @@ a {
 .darkgrey {
   color: #777777; }
 
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg) scale(5); }
+  100% {
+    transform: rotate(360deg) scale(5); } }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg) scale(5); }
   100% {
     transform: rotate(360deg) scale(5); } }
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0); }
+  75% {
+    opacity: 1;
+    transform: scale(1.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
 @keyframes appear {
   0% {
     opacity: 0;
@@ -63,6 +79,13 @@ a {
   100% {
     opacity: 1;
     transform: scale(1); } }
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 0;
+    z-index: 2; }
+  100% {
+    opacity: 0;
+    z-index: 2; } }
 @keyframes disappear {
   0% {
     opacity: 0;
@@ -70,17 +93,36 @@ a {
   100% {
     opacity: 0;
     z-index: 2; } }
+@-webkit-keyframes move {
+  0% {
+    transform: translateX(0%); }
+  100% {
+    transform: translateX(-180%); } }
 @keyframes move {
   0% {
     transform: translateX(0%); }
   100% {
     transform: translateX(-180%); } }
+@-webkit-keyframes comehere {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right; }
+  to {
+    transform: scaleX(1);
+    transform-origin: right; } }
 @keyframes comehere {
   0% {
     transform: scaleX(0);
     transform-origin: right; }
   to {
     transform: scaleX(1);
+    transform-origin: right; } }
+@-webkit-keyframes reversecomehere {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right; }
+  to {
+    transform: scaleX(0);
     transform-origin: right; } }
 @keyframes reversecomehere {
   0% {
@@ -89,6 +131,13 @@ a {
   to {
     transform: scaleX(0);
     transform-origin: right; } }
+@-webkit-keyframes turn {
+  0% {
+    transform: rotate(0deg) scale(1.6); }
+  80% {
+    transform: rotate(400deg) scale(1.6); }
+  100% {
+    transform: rotate(360deg) scale(1.6); } }
 @keyframes turn {
   0% {
     transform: rotate(0deg) scale(1.6); }
@@ -96,11 +145,22 @@ a {
     transform: rotate(400deg) scale(1.6); }
   100% {
     transform: rotate(360deg) scale(1.6); } }
+@-webkit-keyframes move2 {
+  0% {
+    transform: translateX(120%); }
+  100% {
+    transform: translateX(-120%); } }
 @keyframes move2 {
   0% {
     transform: translateX(120%); }
   100% {
     transform: translateX(-120%); } }
+@-webkit-keyframes appearsection {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateY(-5%); } }
 @keyframes appearsection {
   0% {
     opacity: 0; }
@@ -577,9 +637,12 @@ a {
 /* OTHER */
 .spinner {
   z-index: -1;
-  animation: disappear 5ms;
-  animation-delay: 3300ms;
-  animation-fill-mode: forwards; }
+  -webkit-animation: disappear 5ms;
+          animation: disappear 5ms;
+  -webkit-animation-delay: 3300ms;
+          animation-delay: 3300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
 
 .lds-dual-ring {
   position: absolute;
@@ -598,10 +661,14 @@ a {
   border-radius: 50%;
   border: 6px solid #9356DC;
   border-color: #9356DC transparent #99E2D0 transparent;
-  animation: lds-dual-ring 1s ease-in-out;
-  animation-iteration-count: 3;
-  animation-delay: 300ms;
-  animation-fill-mode: backwards; }
+  -webkit-animation: lds-dual-ring 1s ease-in-out;
+          animation: lds-dual-ring 1s ease-in-out;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards; }
 
 .btn_heart {
   color: red;
@@ -628,8 +695,10 @@ a {
       color: linear-gradient(160deg, #FF79DA, #9356DC);
       cursor: pointer;
       background-image: linear-gradient(160deg, #FF79DA, #9356DC);
-      background-clip: text;
-      animation: appear 400ms ease-in-out alternate;
+      -webkit-background-clip: text;
+              background-clip: text;
+      -webkit-animation: appear 400ms ease-in-out alternate;
+              animation: appear 400ms ease-in-out alternate;
       background-color: transparent; }
 
 .btn_heart2 {
@@ -656,8 +725,10 @@ a {
       color: linear-gradient(160deg, #FF79DA, #9356DC);
       cursor: pointer;
       background-image: linear-gradient(160deg, #FF79DA, #9356DC);
-      background-clip: text;
-      animation: appear 400ms ease-in-out alternate;
+      -webkit-background-clip: text;
+              background-clip: text;
+      -webkit-animation: appear 400ms ease-in-out alternate;
+              animation: appear 400ms ease-in-out alternate;
       background-color: transparent; }
 
 /* ++++ OTHER */
@@ -700,7 +771,8 @@ a {
         .fullmain_eachcards-img img {
           width: 100%;
           height: 140px;
-          object-fit: cover;
+          -o-object-fit: cover;
+             object-fit: cover;
           border-top-left-radius: 15px;
           border-top-right-radius: 15px; }
       .fullmain_eachcards-caption {
@@ -775,7 +847,8 @@ a {
         .fullmain_eachcards-img img {
           width: 100%;
           height: 140px;
-          object-fit: cover;
+          -o-object-fit: cover;
+             object-fit: cover;
           border-top-left-radius: 15px;
           border-top-right-radius: 15px; }
       .fullmain_eachcards-caption {
@@ -852,7 +925,8 @@ a {
         .fullmain_eachcards-img img {
           width: 100%;
           height: 140px;
-          object-fit: cover;
+          -o-object-fit: cover;
+             object-fit: cover;
           border-top-left-radius: 15px;
           border-top-right-radius: 15px; }
       .fullmain_eachcards-caption {
@@ -889,14 +963,20 @@ a {
   background-color: #f6f6f6; }
 
 section:nth-child(1) {
-  animation: appearsection 800ms both;
-  animation-delay: 400ms; }
+  -webkit-animation: appearsection 800ms both;
+          animation: appearsection 800ms both;
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms; }
 section:nth-child(2) {
-  animation: appearsection 800ms both;
-  animation-delay: 800ms; }
+  -webkit-animation: appearsection 800ms both;
+          animation: appearsection 800ms both;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms; }
 section:nth-child(3) {
-  animation: appearsection 800ms both;
-  animation-delay: 1200ms; }
+  -webkit-animation: appearsection 800ms both;
+          animation: appearsection 800ms both;
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms; }
 
 .fullmain2 {
   margin-left: 4%;
@@ -967,15 +1047,18 @@ section:nth-child(3) {
             height: 102%;
             margin-top: -1%;
             margin-right: -1%;
-            animation: comehere 800ms forwards alternate; }
+            -webkit-animation: comehere 800ms forwards alternate;
+                    animation: comehere 800ms forwards alternate; }
           .fullmain2_section_allcards_eachcards:hover > .fullmain2_section_allcards_eachcards_right .anim_order {
             position: absolute;
             display: inline;
             top: 35%;
             left: 80%;
-            animation: move 800ms forwards alternate; }
+            -webkit-animation: move 800ms forwards alternate;
+                    animation: move 800ms forwards alternate; }
             .fullmain2_section_allcards_eachcards:hover > .fullmain2_section_allcards_eachcards_right .anim_order i {
-              animation: turn 800ms forwards alternate;
+              -webkit-animation: turn 800ms forwards alternate;
+                      animation: turn 800ms forwards alternate;
               color: white; }
         .fullmain2_section_allcards_eachcards:hover > .fullmain2_section_allcards_eachcards_left .fullmain2_section_allcards_eachcards_left-plat {
           width: 12em; }
@@ -989,7 +1072,8 @@ section:nth-child(3) {
             text-overflow: ellipsis;
             width: 100%; }
         .fullmain2_section_allcards_eachcards:hover > .fullmain2_section_allcards_eachcards_left .fullmain2_section_allcards_eachcards_left-prix {
-          animation: move2 800ms forwards alternate; }
+          -webkit-animation: move2 800ms forwards alternate;
+                  animation: move2 800ms forwards alternate; }
   .fullmain2_commander {
     display: flex;
     flex-wrap: wrap;
@@ -1012,5 +1096,3 @@ section:nth-child(3) {
         box-shadow: 2px 2px 16px 0px #848484; }
 
 /* ++++ PAGE accueil +++ */
-
-/*# sourceMappingURL=style.css.map */
