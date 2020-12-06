@@ -4,22 +4,19 @@
     background-color: rgb(246, 246, 246);
 }
 
-section{
-    &:nth-child(1){
+.fullmain2{
+    &-sect1{
         animation: appearsection 800ms both;
         animation-delay: $cd-sectdelay;
     }
-    &:nth-child(2){
+    &-sect2{
         animation: appearsection 800ms both;
         animation-delay: $cd-sectdelay * 2;
     }
-    &:nth-child(3){
+    &-sect3{
         animation: appearsection 800ms both;
         animation-delay: $cd-sectdelay * 3;
     }
-}
-
-.fullmain2{
     margin-left: 4%;
     margin-right: 4%;
     &_section{
@@ -149,7 +146,7 @@ section{
         a{
             background: linear-gradient(160deg, $cd-secondary, $cd-primary);
             color: white;
-            padding: 5% 15% 5% 15%;
+            padding: 1em 5em 1em 5em;
             border-radius: 25px;
             box-shadow: 1px 1px 15px 0px rgba($color: darken($cd-grey,40), $alpha: 1);
             &:hover{
