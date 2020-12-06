@@ -83,7 +83,7 @@
             }
         }
     }
-    @media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, huge)){
+    @media all and (min-width: map-get($breakpoints, mobile)){
         .fullfullmain{
             padding-bottom: 2em;
         }
@@ -97,7 +97,8 @@
                     height: auto;
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: space-evenly;
+                    justify-content: center;
+                    align-items: center;
                 }
             &_eachcards{
                 margin-bottom: 1em;

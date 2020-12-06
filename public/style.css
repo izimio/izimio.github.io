@@ -456,7 +456,7 @@ footer {
   .fullfooter_liste-fourth {
     margin-left: 0.3em; }
 
-@media all and (min-width: 560px) and (max-width: 2000px) {
+@media all and (min-width: 560px) {
   footer {
     background-color: #353535;
     color: white;
@@ -687,7 +687,7 @@ footer {
       padding: 2% 3% 2% 3%;
       border-radius: 5px; }
 
-@media all and (min-width: 560px) and (max-width: 2000px) {
+@media all and (min-width: 560px) {
   .fullfullmain {
     padding-bottom: 2em; }
 
@@ -699,7 +699,8 @@ footer {
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; }
+    justify-content: center;
+    align-items: center; }
   .fullmain_eachcards {
     margin-bottom: 1em;
     margin-right: 1em; } }
