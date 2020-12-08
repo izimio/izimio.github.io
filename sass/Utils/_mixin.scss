@@ -49,12 +49,12 @@
 
 @keyframes comehere{
   from{
-    transform: scaleX(0);
-    transform-origin: right;
+    transform: translateX(120%);
+    overflow: hidden;
   }
   to{
-    transform: scaleX(1);
-    transform-origin: right;
+    transform: translateX(0%);
+    overflow: hidden;
   }
 }
 
