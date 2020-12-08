@@ -37,7 +37,7 @@
             &_eachcards{
                 box-shadow: 1px 1px 10px 0px rgba($color: darken($cd-grey,20), $alpha: 1);
                 display: flex;
-                margin-top: 5%;
+                margin-top: 1em;
                 border-radius: 15px;
                 background-color: white;
                 &_left{
@@ -89,13 +89,13 @@
                 &:hover > .fullmain2_section_allcards_eachcards_right{
                     width: 100px;
                     position: relative;
-
                     .fullmain2_section_allcards_eachcards_right-anim{
                         background-color: $cd-tertiary;
                         height: 102%;
                         margin-top: -1%;
                         margin-right: -1%;
                         animation: comehere 800ms forwards alternate;
+                        animation-iteration-count: 2;
                     }
                     .anim_order{
                         position: absolute;
@@ -103,6 +103,7 @@
                         top: 35%;
                         left: 80%;
                         animation: move 800ms forwards alternate;
+                        animation-iteration-count: 2;
                         i{
                             animation: turn 800ms forwards alternate;
                             color: white;
@@ -126,6 +127,7 @@
                     }
                     .fullmain2_section_allcards_eachcards_left-prix{
                         animation: move2 800ms forwards alternate;
+                        animation-iteration-count: 2;
                     }
                     
                 }

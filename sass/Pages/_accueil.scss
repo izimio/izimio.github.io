@@ -90,6 +90,7 @@
         .fullmain{
             &_tilte{
                 padding-top: 0%;
+                margin-bottom: 1em;
                 font-size: 1.5em;
                 text-align: center;
             }
@@ -97,8 +98,7 @@
                     height: auto;
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
-                    align-items: center;
+                    justify-content: space-evenly;
                 }
             &_eachcards{
                 margin-bottom: 1em;
