@@ -12,11 +12,11 @@ a{
     @media all and (max-width: map-get($breakpoints, mobile)){
         max-width: map-get($breakpoints, mobile);
     }
-    @media all and (max-width: map-get($breakpoints, mid)){
+    @media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, mid)){
         max-width: map-get($breakpoints, mid);
     }
-    @media all and (max-width: map-get($breakpoints, huge)){
-        max-width: map-get($breakpoints, huge);
+    @media all and (min-width: map-get($breakpoints, mid)){
+        max-width: map-get($breakpoints, huge) + 500;
     }
 }
 
