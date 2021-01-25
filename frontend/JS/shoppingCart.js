@@ -1,135 +1,101 @@
-const ouin = document.getElementById('allcost');
+// CREATINGS mains VARIABLE //
+const main = document.getElementById("recapAll");
+const price = document.getElementById("allcost");
+const itemNumber = document.getElementById("cartIndex");
+var empty = document.getElementById("emptyBasket");
+var impatient = document.getElementById("impatient");
+var i = -1;
+var index;
+var antiRepeat = [
+    0,
+    0,
+    0,
+    0,
+    0
+];
+// ============ //
 
-let oui = 1;
-ouin.innerHTML = oui + "€";
-ouin.addEventListener('click', function () {
+var quantity = localStorage.getItem("quantity");
+quantity = JSON.parse(quantity);
 
-    oui *= 2;
-    ouin.innerHTML = "&nbsp " + oui + "€";
 
-});
+//  REFRESHING THE nums'S VALUE//
+let nums = localStorage.getItem("PricesAndNums");
+refreshNumsAndPrice();
+// =========================== // 
 
-// ========================== // FORMULAIRE // =========================== //
-var firstName = document.getElementById('firstName');
-var lastName = document.getElementById('lastName');
-var city = document.getElementById('city');
-var adress = document.getElementById('address');
-var email = document.getElementById('mail');
-var sumbut = document.getElementById('sumbutton');
+// OPENING AND GETTING READY TO SHOW THE BASKET // 
 
-let error = {
-    in1: 0,
-    in2: 0,
-    in3: 0,
-    in4: 0,
-    in5: 0
-};
+var storage = localStorage.getItem("TabAllInfos");
+if(!storage){
+    empty.textContent = "Votre panier est vide";
+}
+storage = JSON.parse(storage);
 
-function userInputChecker(userInput, value) {
-
-    if (value == 1) {
-        if (!userInput.match(/^([a-zA-Z-'éèç ]+)$/))
-            return (0);
-        else
-            return (1);
-    } else if (value == 2) {
-        if (!userInput.match(/^([a-zA-Z-0-9éèç ]+)$/))
-            return (0);
-        else
-            return (1);
-    } else if (value == 3) {
-        if (!userInput.match(/^[a-z0-9._-ç]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/))
-            return (0);
-        else
-            return (1);
+// Adjusting the text with the teddies's number
+if(storage.products[1]){
+    impatient.textContent = "Vos oursons ont hâte de vous rencontrer"
+}
+else{
+    impatient.textContent = "Votre ourson a hâte de vous rencontrer"
+}
+if (!storage.products[0]) {
+    empty.textContent = "Votre panier est vide";
+    impatient.textContent = "";
+} else {
+    main.textContent = "";
+    while (++i != storage.products.length) {
+        index = antiRep(storage.products[i]._id); // BLOCKING THE REPETITION OF ARTICLES //           
+        if (antiRepeat[index] <= 1 && storage.products[i]) {
+            main.innerHTML +=
+                `<div class="recapitulatif_all_each" id="recap${GetId(storage.products[i]._id)}">
+                        <div class="recapitulatif_all_each-image">
+                            <img src="${storage.products[i].imageUrl}" alt="photo de ${storage.products[i].name}">
+                        </div>
+                        <div class="recapitulatif_all_each-infos">
+                            <div class="recapitulatif_all_each-infos-left">
+                                <h3>${storage.products[i].name}</h3>
+                                <p>${storage.products[i].description}</p>
+                                <div class="recapitulatif_all_each-infos-left-tab">
+                                    <div class="recapitulatif_all_each-infos-left-tab-minus">
+                                        <p onclick="modifyValueMinus()" id="minu${GetId(storage.products[i]._id)}">-</p>
+                                    </div>
+                                    <div class="recapitulatif_all_each-infos-left-tab-select">
+                                        <p id="numberOf${GetId(storage.products[i]._id)}"> </p>
+                                    </div>
+                                    <div class="recapitulatif_all_each-infos-left-tab-plus">
+                                        <p id="plus${GetId(storage.products[i]._id)}" onclick="modifyValuePlus()">+</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recapitulatif_all_each-infos-right">
+                                <div class="recapitulatif_all_each-infos-right-cross" id="crossDiv">
+                                    <i class="far fa-trash-alt" id="cross${GetId(storage.products[i]._id)}" onclick="deletingElement()"></i>
+                                    <p id="crossInfo"></p>
+                                </div>
+                                <div class="recapitulatif_all_each-infos-right-price">
+                                    <p>${storage.products[i].price},00 €</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+        }
+        checkQuantity(index);
     }
 }
 
-firstName.addEventListener('input', function () {
-    if (!userInputChecker(firstName.value, 1)) {
-        firstName.classList.add('wrong');
-        error1.innerHTML = "&nbsp &nbsp entrée invalide";
-        error.in1 = 0;
-        if (error.in1 != 1 || error.in2 != 1 || error.in3 != 1 || error.in4 != 1 || error.in5 != 1)
-            sumbut.setAttribute("disabled", "");
-    } else {
-        firstName.classList.remove('wrong');
-        error1.innerHTML = "";
-        error.in1 = 1;
-        if (error.in1 == 1 && error.in2 == 1 && error.in3 == 1 && error.in4 == 1 && error.in5 == 1)
-            sumbut.removeAttribute("disabled", "");
-    }
+// INFOS ABOUT DELETING AN ELEMENT // 
+const crossDiv = document.getElementById("crossDiv");
+crossDiv.addEventListener('mouseover', function (event) {
+    event.stopPropagation();
+
+    var crossinfo = document.getElementById('crossInfo')
+    crossinfo.classList.add('recapitulatif_all_each-infos-right-cross-info')
+    crossinfo.textContent = "supprimer l'article";
+});
+crossDiv.addEventListener('mouseout', function () {
+    var crossinfo = document.getElementById('crossInfo')
+    crossinfo.textContent = "";
 
 });
-
-lastName.addEventListener('input', function () {
-    if (!userInputChecker(lastName.value, 1)) {
-        lastName.classList.add('wrong');
-        error2.innerHTML = "&nbsp &nbsp entrée invalide";
-        error.in2 = 0;
-        if (error.in1 != 1 || error.in2 != 1 || error.in3 != 1 || error.in4 != 1 || error.in5 != 1)
-            sumbut.setAttribute("disabled", "");
-    } else {
-        lastName.classList.remove('wrong');
-        error2.innerHTML = "";
-        error.in2 = 1;
-        if (error.in1 == 1 && error.in2 == 1 && error.in3 == 1 && error.in4 == 1 && error.in5 == 1)
-            sumbut.removeAttribute("disabled", "");
-    }
-
-});
-
-city.addEventListener('input', function () {
-    if (!userInputChecker(city.value, 1)) {
-        city.classList.add('wrong');
-        error3.innerHTML = "&nbsp &nbsp entrée invalide";
-        error.in3 = 0;
-        if (error.in1 != 1 || error.in2 != 1 || error.in3 != 1 || error.in4 != 1 || error.in5 != 1)
-            sumbut.setAttribute("disabled", "");
-    } else {
-        city.classList.remove('wrong');
-        error3.innerHTML = "";
-        error.in3 = 1;
-        if (error.in1 == 1 && error.in2 == 1 && error.in3 == 1 && error.in4 == 1 && error.in5 == 1)
-            sumbut.removeAttribute("disabled", "");
-    }
-
-});
-
-adress.addEventListener('input', function () {
-    if (!userInputChecker(adress.value, 2)) {
-        adress.classList.add('wrong');
-        error4.innerHTML = "&nbsp &nbsp entrée invalide";
-        error.in4 = 0;
-        if (error.in1 != 1 || error.in2 != 1 || error.in3 != 1 || error.in4 != 1 || error.in5 != 1)
-            sumbut.setAttribute("disabled", "");
-    } else {
-        adress.classList.remove('wrong');
-        error4.innerHTML = "";
-        error.in4 = 1;
-        if (error.in1 == 1 && error.in2 == 1 && error.in3 == 1 && error.in4 == 1 && error.in5 == 1)
-            sumbut.removeAttribute("disabled", "");
-
-    }
-});
-
-email.addEventListener('change', function () {
-    if (!userInputChecker(email.value, 3)) {
-        email.classList.add('wrong');
-        error5.innerHTML = "&nbsp &nbsp entrée invalide";
-        error.in5 = 0;
-        if (error.in1 != 1 || error.in2 != 1 || error.in3 != 1 || error.in4 != 1 || error.in5 != 1)
-            sumbut.setAttribute("disabled", "");
-    } else {
-        email.classList.remove('wrong');
-        error5.innerHTML = "";
-        error.in5 = 1;
-        if (error.in1 == 1 && error.in2 == 1 && error.in3 == 1 && error.in4 == 1 && error.in5 == 1)
-            sumbut.removeAttribute("disabled", "");
-
-    }
-});
-
-sumbut.addEventListener('click', function (event) {
-
-});
+// ================================ //

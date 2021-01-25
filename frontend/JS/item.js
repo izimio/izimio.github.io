@@ -1,69 +1,80 @@
+// GETTING PAGE ID //
+var str = document.location.href;
 
-// GETTING PRODUCT ID //
-var id;
-const ad = document.location.href //Obtiens l'id du produit
-id = ad.substr(47,24);
+let p = -1;
+var id = "";
+
+while(str[p] != "=")
+    p++;
+while(str[++p] != '.'){
+    id += str[p]
+}
+    console.log(id);
 // =============== //
 
 // declaring variables //
 let i = -1;
-var p;
-var d;
 const Allcolors = document.createElement("select");
 const Allbubble = document.createElement("div");
-const main = document.getElementById('product');
-let numberOfItemsInTheCard = 0;
-
+const main = document.getElementById("product");
+var tabAll;
+const itemNumber = document.getElementById("cartIndex");
 // ======== //
-        
 
-    fetch("http://localhost:3000/api/teddies/" + id) //Rappel notre api + l'id de notre produit
-    .then(async result_ => {  //Récupère le tableau json 
-        const response = await result_.json() //Donne un nom au tableau json récupéré
-        // reducing PRIZE //
-        // =============== //
+// SETTING NUMS //
+let nums = localStorage.getItem("PricesAndNums");
+refreshNums();
+// ============= //
+
+// MAIN PROG // 
+fetch("http://localhost:3000/api/teddies/" + id) //recall our API with the ID
+    .then(async result_ => { //GET the stringify tab
+        const response = await result_.json() //give a ame to that tab
+        tabAll = response; // getting the api's information inside my own variable
+
         // TRICKY CASES //
         while (++i < response.colors.length) {
-            const option = document.createElement("option");             
-            option.innerHTML = response.colors[i];
+            const option = document.createElement("option"); // creating the select filled with every color
+            option.textContent = response.colors[i];
             Allcolors.appendChild(option);
 
-            const bubble = document.createElement("div");
+            const bubble = document.createElement("div"); // creatings the colored bubbles 
             bubble.style.backgroundColor = response.colors[i];
-            if(response.colors[i] == "Pale brown")
+            if (response.colors[i] == "Pale brown")
                 bubble.style.backgroundColor = "sandybrown";
-            else if(response.colors[i] == "Dark brown")
+            else if (response.colors[i] == "Dark brown")
                 bubble.style.backgroundColor = "#654321";
             bubble.classList.add("overview_infos-allcolors-colors-bubble");
             Allbubble.appendChild(bubble);
-            }
+        }
         // ============== //
+
         main.innerHTML = `<div class="tilte2">
-                <h1>Découvrez ${response.name}</h1>
+                <h1>Découvrez ${tabAll.name}</h1>
                     </div>
                     <section class="bg-color-deg">
                         <div class="overview">
                             <div class="overview_img">
-                                <img src="${response.imageUrl}" alt="photo de ${response.name}">
+                                <img src="${tabAll.imageUrl}" alt="photo de ${tabAll.name}">
                                 <div class="overview_img-price">
-                                    <h2>${response.price} € </h2>
+                                    <h2>${tabAll.price / 100},00 € </h2>
                                 </div>
                             </div>
                             <div class="overview_infos">
                                 <div class="overview_infos-name text-center">
-                                    <h2>${response.name}</h2>
+                                    <h2>${tabAll.name}</h2>
                                 </div>
                                 <div class="overview_infos-description">
-                                    <p> <b> description :</b> ${response.description}</p>
+                                    <p> <b> Description :</b> ${tabAll.description}</p>
                                 </div>
                                 <div class="overview_infos-materiaux">
                                     <h2>Matériaux</h2>
                                     <ul>
                                         <li>Laine de mouton</li>
                                         <li>Coton biologique éco-responsable</li>
-                                        <li>Billes en verres</li>
+                                        <li>Billes en verre</li>
                                         <li>Fil de lin</li>
-                                        <li>Teinture aux pigments végétales</li>
+                                        <li>Teinture aux pigments végétaux</li>
                                     </ul>
                                 </div>
                                 <div class="overview_infos-allcolors">
@@ -92,15 +103,8 @@ let numberOfItemsInTheCard = 0;
                         </div>
                     </section>`;
     })
-    .catch((error) => {
-        console.log(error);
-    })
-
-    const addToBasket = () =>{
-        numberOfItemsInTheCard++;
-        cartIndex.innerHTML = numberOfItemsInTheCard;
-        document.location.href="shoppingCart.html";
-    }
-
     
+    .catch((error) => {
+        console.error(error);
+    })
     
